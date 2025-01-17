@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "811432022545",
+    "project_id": "parippuwa-1984a",
+    "storage_bucket": "parippuwa-1984a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811432022545:android:27e4226e0adc031bb457b0",
+        "android_client_info": {
+          "package_name": "com.example.parippuwa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLvvGN688dE0MVljYU9Eqy5O7lz-yYoeI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
