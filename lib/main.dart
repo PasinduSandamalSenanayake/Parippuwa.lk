@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:parippuwa/auth/auth_page.dart';
 import 'package:parippuwa/screen/home.dart';
 import 'package:parippuwa/screen/login.dart';
 import 'package:parippuwa/screen/register.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:parippuwa/widget/category_widget.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -25,7 +27,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Register(),
+      home: const Home(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
