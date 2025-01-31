@@ -49,6 +49,7 @@ dev_dependencies:
   firebase_core: ^3.7.0
   cloud_firestore: ^5.2.2
   firebase_auth: ^5.4.1
+  curved_navigation_bar: ^1.0.6
 
 
 

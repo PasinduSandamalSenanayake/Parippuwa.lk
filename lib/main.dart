@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:parippuwa/auth/auth_page.dart';
 import 'package:parippuwa/screen/home.dart';
-import 'package:parippuwa/screen/login.dart';
-import 'package:parippuwa/screen/register.dart';
+import 'package:parippuwa/screen/auth/login.dart';
+import 'package:parippuwa/screen/auth/register.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:parippuwa/widget/category_widget.dart';
+import 'package:parippuwa/screen/seller_screen.dart';
+import 'package:parippuwa/widget/home/category_widget.dart';
 import 'firebase_options.dart';
 
 void main() async {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:parippuwa/screen/profile_screen.dart';
 import '../screen/home.dart';
 import 'auth_page.dart';
 
@@ -13,7 +14,7 @@ class mainPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return Home();
+            return ProfileScreen();
           } else {
             return authPage();
           }
