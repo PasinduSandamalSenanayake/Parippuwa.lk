@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _pages = [
     HomeFull(), // Home Screen
     SellerScreen(), // Cart Screen
-    mainPage(), // Profile Screen
+    MainPage(), // Profile Screen
   ];
 
   @override

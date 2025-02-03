@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'house_details.dart';
+
 class HouseWidget extends StatefulWidget {
   const HouseWidget({super.key});
 
@@ -22,29 +24,40 @@ class _HouseWidgetState extends State<HouseWidget> {
             for (int i = 0; i < 8; i++)
               Padding(
                 padding: EdgeInsets.all(10),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        blurRadius: 7,
-                        spreadRadius: 5,
-                        offset: Offset(0, 2),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            HouseDetails(), // Replace with actual HouseDetail page
                       ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        image_container(),
-                        name_widget(),
-                        description_widget(),
-                        price_widget(),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 7,
+                          spreadRadius: 5,
+                          offset: Offset(0, 2),
+                        ),
                       ],
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          image_container(),
+                          name_widget(),
+                          description_widget(),
+                          price_widget(),
+                        ],
+                      ),
                     ),
                   ),
                 ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:parippuwa/screen/auth/register.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:parippuwa/auth/main_page.dart';
+import 'package:parippuwa/screen/profile_screen.dart';
 
 class Login extends StatefulWidget {
   final VoidCallback show;
@@ -12,6 +15,35 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  final _firebaseAuth = FirebaseAuth.instance;
+
+  _handleSignIn() async {
+    final GoogleSignInAccount? googleSignInAccount =
+        await GoogleSignIn().signIn();
+
+    if (googleSignInAccount == null) {
+      return;
+    }
+
+    final GoogleSignInAuthentication googleSignInAuthentication =
+        await googleSignInAccount.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleSignInAuthentication.accessToken,
+      idToken: googleSignInAuthentication.idToken,
+    );
+
+    await _firebaseAuth.signInWithCredential(credential);
+
+    print(_firebaseAuth.currentUser!.displayName);
+    if (_firebaseAuth.currentUser != null) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MainPage()),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,23 +75,27 @@ class _LoginState extends State<Login> {
               const SizedBox(height: 8.0),
               or_Text(),
               const SizedBox(height: 8.0),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                ),
-                child: const Text(
-                  'Login with Google',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-              )
+              sign_in_google_btn()
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  ElevatedButton sign_in_google_btn() {
+    return ElevatedButton(
+      onPressed: _handleSignIn,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.green,
+        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+      ),
+      child: const Text(
+        'Login with Google',
+        style: TextStyle(color: Colors.white, fontSize: 18),
       ),
     );
   }
