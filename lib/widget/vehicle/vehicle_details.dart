@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HouseDetails extends StatefulWidget {
-  const HouseDetails({super.key});
+class VehicleDetails extends StatefulWidget {
+  const VehicleDetails({super.key});
 
   @override
-  State<HouseDetails> createState() => _HouseDetailsState();
+  State<VehicleDetails> createState() => _VehicleDetailsState();
 }
 
-class _HouseDetailsState extends State<HouseDetails> {
+class _VehicleDetailsState extends State<VehicleDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class _HouseDetailsState extends State<HouseDetails> {
         title: Row(
           children: [
             Text(
-              "House",
+              "Vehicle",
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             )
           ],
@@ -33,7 +33,7 @@ class _HouseDetailsState extends State<HouseDetails> {
               SizedBox(
                 height: 10,
               ),
-              location_txt(),
+              vehicle_txt(),
               SizedBox(
                 height: 10,
               ),
@@ -94,17 +94,17 @@ class _HouseDetailsState extends State<HouseDetails> {
     );
   }
 
-  Widget location_txt() {
+  Widget vehicle_txt() {
     return Container(
       child: Row(
         children: [
           Icon(
-            Icons.location_on,
+            Icons.car_rental,
             size: 40,
             color: Colors.lightGreen,
           ),
           Text(
-            "Location",
+            "Vehicle",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -140,7 +140,7 @@ class _HouseDetailsState extends State<HouseDetails> {
             TextSpan(
               children: [
                 TextSpan(
-                  text: "28,000",
+                  text: "28.50",
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -148,7 +148,7 @@ class _HouseDetailsState extends State<HouseDetails> {
                   ),
                 ),
                 TextSpan(
-                  text: "/per month", // Access userName via widget
+                  text: "/per km", // Access userName via widget
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,

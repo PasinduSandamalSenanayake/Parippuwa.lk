@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HouseDetails extends StatefulWidget {
-  const HouseDetails({super.key});
+class ItemsDetails extends StatefulWidget {
+  const ItemsDetails({super.key});
 
   @override
-  State<HouseDetails> createState() => _HouseDetailsState();
+  State<ItemsDetails> createState() => _ItemsDetailsState();
 }
 
-class _HouseDetailsState extends State<HouseDetails> {
+class _ItemsDetailsState extends State<ItemsDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class _HouseDetailsState extends State<HouseDetails> {
         title: Row(
           children: [
             Text(
-              "House",
+              "Item",
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             )
           ],
@@ -33,7 +33,7 @@ class _HouseDetailsState extends State<HouseDetails> {
               SizedBox(
                 height: 10,
               ),
-              location_txt(),
+              item_txt(),
               SizedBox(
                 height: 10,
               ),
@@ -94,17 +94,17 @@ class _HouseDetailsState extends State<HouseDetails> {
     );
   }
 
-  Widget location_txt() {
+  Widget item_txt() {
     return Container(
       child: Row(
         children: [
           Icon(
-            Icons.location_on,
+            Icons.home_repair_service_rounded,
             size: 40,
             color: Colors.lightGreen,
           ),
           Text(
-            "Location",
+            "Item",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -140,7 +140,7 @@ class _HouseDetailsState extends State<HouseDetails> {
             TextSpan(
               children: [
                 TextSpan(
-                  text: "28,000",
+                  text: "2800",
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -148,7 +148,7 @@ class _HouseDetailsState extends State<HouseDetails> {
                   ),
                 ),
                 TextSpan(
-                  text: "/per month", // Access userName via widget
+                  text: "/per day", // Access userName via widget
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
